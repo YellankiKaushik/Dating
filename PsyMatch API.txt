@@ -1,0 +1,199 @@
+PsyMatch API
+ 0.1.0 
+OAS 3.1
+/openapi.json
+
+Authorize
+Auth
+
+
+POST
+/auth/register
+Register
+
+Parameters
+Cancel
+Reset
+No parameters
+
+Request body
+
+application/json
+Edit Value
+Schema
+{
+  "email": "kaushik@test.com",
+  "password": "12345678"
+}
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/auth/register' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "email": "kaushik@test.com",
+  "password": "12345678"
+}'
+Request URL
+http://127.0.0.1:8000/auth/register
+Server response
+Code	Details
+201	
+Response body
+Download
+{
+  "message": "User registered successfully"
+}
+Response headers
+ content-length: 42 
+ content-type: application/json 
+ date: Fri,13 Mar 2026 10:37:38 GMT 
+ server: uvicorn 
+Responses
+Code	Description	Links
+201	
+Successful Response
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+"string"
+No links
+422	
+Validation Error
+
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+No links
+
+POST
+/auth/login
+Login
+
+Parameters
+Cancel
+Reset
+No parameters
+
+Request body
+
+application/json
+Edit Value
+Schema
+{
+  "email": "kaushik@test.com",
+  "password": "12345678"
+}
+Execute
+Clear
+Responses
+Curl
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/auth/login' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "email": "kaushik@test.com",
+  "password": "12345678"
+}'
+Request URL
+http://127.0.0.1:8000/auth/login
+Server response
+Code	Details
+200	
+Response body
+Download
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwiZXhwIjoxNzczNDAxODk3fQ.37q2T1IbKHz3fx4p7ezc9TWWNqaXdORGRpAFkqf1Dxw",
+  "token_type": "bearer"
+}
+Response headers
+ content-length: 160 
+ content-type: application/json 
+ date: Fri,13 Mar 2026 10:38:16 GMT 
+ server: uvicorn 
+Responses
+Code	Description	Links
+200	
+Successful Response
+
+Media type
+
+application/json
+Controls Accept header.
+Example Value
+Schema
+{
+  "access_token": "string",
+  "token_type": "bearer"
+}
+No links
+422	
+Validation Error
+
+Media type
+
+application/json
+Example Value
+Schema
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+No links
+
+GET
+/auth/me
+Me
+
+
+default
+
+
+GET
+/
+Read Root
+
+
+Schemas
+HTTPValidationErrorExpand allobject
+TokenResponseExpand allobject
+UserCreateExpand allobject
+UserLoginExpand allobject
+UserResponseExpand allobject
+ValidationErrorExpand allobject
